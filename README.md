@@ -212,7 +212,8 @@ faceflow/
 ├── focus_model.pkl         # Trained Random Forest model (required)
 ├── requirements.txt        # Python dependencies
 ├── README.md               # This file
-│
+├── .streamlit/ 
+│    └── config.toml
 └── assets/                 # Optional: screenshots, demo GIFs
     └── demo.png
 ```
