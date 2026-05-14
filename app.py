@@ -37,9 +37,15 @@ PAGE_LABELS = {
     "about":   "About"
 }
 
-mp_face  = mp.solutions.face_mesh
-mp_draw  = mp.solutions.drawing_utils
-mp_style = mp.solutions.drawing_styles
+try:
+    mp_face  = mp.solutions.face_mesh
+    mp_draw  = mp.solutions.drawing_utils
+    mp_style = mp.solutions.drawing_styles
+except AttributeError:
+    import mediapipe.python.solutions.face_mesh as face_mesh_module
+    mp_face  = face_mesh_module
+    mp_draw  = mp.solutions.drawing_utils
+    mp_style = mp.solutions.drawing_styles
 
 @st.cache_resource
 def load_model():
