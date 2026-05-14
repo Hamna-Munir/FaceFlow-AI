@@ -37,15 +37,16 @@ PAGE_LABELS = {
     "about":   "About"
 }
 
-try:
-    mp_face  = mp.solutions.face_mesh
-    mp_draw  = mp.solutions.drawing_utils
-    mp_style = mp.solutions.drawing_styles
-except AttributeError:
-    import mediapipe.python.solutions.face_mesh as face_mesh_module
-    mp_face  = face_mesh_module
-    mp_draw  = mp.solutions.drawing_utils
-    mp_style = mp.solutions.drawing_styles
+import mediapipe as mp
+import mediapipe.python.solutions.face_mesh        as mp_face
+import mediapipe.python.solutions.drawing_utils   as mp_draw
+import mediapipe.python.solutions.drawing_styles  as mp_style_mod
+
+CONTOUR_SPEC = mp_draw.DrawingSpec(
+    color=(0, 255, 180),
+    thickness=1,
+    circle_radius=1
+)
 
 @st.cache_resource
 def load_model():
@@ -83,8 +84,11 @@ def crop_eye_region(img_bgr):
 
 def draw_landmarks(img_bgr):
     rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
-    with mp_face.FaceMesh(static_image_mode=True, max_num_faces=1,
-                          min_detection_confidence=0.4) as fm:
+    with mp_face.FaceMesh(
+        static_image_mode=True,
+        max_num_faces=1,
+        min_detection_confidence=0.4
+    ) as fm:
         res = fm.process(rgb)
         if res.multi_face_landmarks:
             for face in res.multi_face_landmarks:
@@ -93,8 +97,8 @@ def draw_landmarks(img_bgr):
                     landmark_list=face,
                     connections=mp_face.FACEMESH_CONTOURS,
                     landmark_drawing_spec=None,
-                    connection_drawing_spec=mp_style
-                        .get_default_face_mesh_contours_style())
+                    connection_drawing_spec=CONTOUR_SPEC
+                )
             return img_bgr, True
     return img_bgr, False
 
