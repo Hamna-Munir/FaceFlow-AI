@@ -1,7 +1,7 @@
-streamlit==1.35.0
-opencv-python-headless==4.9.0.80
-mediapipe==0.10.14
-scikit-learn==1.4.2
-numpy==1.26.4
-matplotlib==3.8.4
-protobuf==4.25.3
+streamlit
+opencv-python-headless
+mediapipe
+scikit-learn
+numpy
+matplotlib
+protobuf
