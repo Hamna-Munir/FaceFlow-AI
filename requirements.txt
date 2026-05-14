@@ -1,6 +1,6 @@
 streamlit
 opencv-python-headless
-mediapipe
+mediapipe==0.10.14
 scikit-learn
 numpy
 matplotlib
