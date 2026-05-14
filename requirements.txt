@@ -1,7 +1,7 @@
 streamlit
 opencv-python-headless
-mediapipe
-scikit-learn
+mediapipe==0.10.9
 numpy
+scikit-learn
 matplotlib
-protobuf
+Pillow
