@@ -671,8 +671,8 @@ with main_col:
         </div>
     </div>
     """, unsafe_allow_html=True)
-        col1, col2 = st.columns([1.3, 0.7], gap="large")
     elif page == "webcam":
+        col1, col2 = st.columns([1.3, 0.7], gap="large")
         with col1:
             st.markdown("""<div class="sec-title">
               <span class="teal-dot"></span> Live feed
