@@ -1,6 +1,7 @@
-streamlit>=1.28.0
-opencv-python-headless==4.9.0.80
+streamlit
+streamlit-webrtc
+opencv-python-headless
 mediapipe==0.10.14
-numpy==1.26.4
-matplotlib==3.8.4
-scikit-learn==1.3.2
+scikit-learn
+numpy
+av
