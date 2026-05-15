@@ -647,9 +647,33 @@ with main_col:
                   Upload an image and click Analyze
                 </div>""", unsafe_allow_html=True)
 
-    # ══ WEBCAM ════════════════════════════════════════════════════════════════
- elif page == "webcam":
+    # ══ WEBCAM ═══════════════════════════════════════════════════════════════
+    
+    elif page == "webcam":
         col1, col2 = st.columns([1.3, 0.7], gap="large")
+        st.markdown("""
+    <div style="background:rgba(248,113,113,0.1);
+                border:1px solid rgba(248,113,113,0.3);
+                border-radius:12px;padding:1.25rem 1.5rem;
+                margin-bottom:1.5rem;">
+        <div style="font-size:14px;font-weight:600;
+                    color:#F87171;margin-bottom:6px;">
+            📷 Live Webcam — Local Only
+        </div>
+        <div style="font-size:13px;color:#A8C4DC;line-height:1.7;">
+            Live webcam requires the app to run on your local machine.<br>
+            <strong style="color:#E8F0FF;">To use Live Mode:</strong>
+            download the code, install dependencies, and run
+            <code style="background:#1E3050;padding:2px 6px;
+                         border-radius:4px;color:#2DD4BF;">
+                streamlit run app.py
+            </code>
+            on your computer.<br><br>
+            <strong style="color:#2DD4BF;">✅ Photo Analysis works fully on this deployed version!</strong>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
         with col1:
             st.markdown("""<div class="sec-title">
               <span class="teal-dot"></span> Live feed
