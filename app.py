@@ -648,7 +648,6 @@ with main_col:
                 </div>""", unsafe_allow_html=True)
 
     # ══ WEBCAM ════════════════════════════════════════════════════════════════
-    elif page == "webcam":
     st.markdown("""
     <div style="background:rgba(248,113,113,0.1);
                 border:1px solid rgba(248,113,113,0.3);
